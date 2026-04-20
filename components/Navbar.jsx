@@ -49,7 +49,7 @@ export default function Navbar() {
         scrolled ? "backdrop-blur-xl bg-black/40 border-b border-white/10" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto w-full px-6 flex items-center justify-between">
+      <div className="max-w-[80rem] mx-auto w-full px-4 md:px-6 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 group"
@@ -112,7 +112,7 @@ export default function Navbar() {
           open ? "max-h-96 opacity-100 backdrop-blur-xl bg-black/80 border-b border-white/10" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="px-6 py-4 flex flex-col gap-2">
+        <ul className="px-4 py-4 flex flex-col gap-2">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <button

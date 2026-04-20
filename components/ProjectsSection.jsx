@@ -20,26 +20,26 @@ export default function ProjectsSection() {
   const displayed = showAll ? featuredProjects : featuredProjects.slice(0, 4);
 
   return (
-    <section id="projects" ref={ref} className="py-24 md:py-32 px-4 md:px-8 relative overflow-hidden mt-24">
+    <section id="projects" ref={ref} className="section-shell">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-blue-600/4 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="section-inner relative">
         <motion.div
-          className="flex flex-col items-center justify-center text-center mb-10"
+          className="section-header"
           variants={fadeUp} custom={0} initial="hidden" animate={inView ? "visible" : "hidden"}
         >
-          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-violet-400 mb-3">
+          <p className="section-subtitle">
             Projects
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-white max-w-2xl mx-auto mb-4">
-            Things I've Built
+          <h2 className="section-title">
+            Things I&apos;ve Built
           </h2>
-          <p className="text-white/45 text-sm max-w-2xl mx-auto">
+          <p className="section-copy">
             A selection of projects spanning AI, full-stack web, blockchain, and developer tooling.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-10">
+        <div className="content-frame grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8">
           {displayed.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}

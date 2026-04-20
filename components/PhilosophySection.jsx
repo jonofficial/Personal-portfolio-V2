@@ -16,26 +16,26 @@ export default function PhilosophySection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="philosophy" ref={ref} className="py-24 md:py-32 px-4 md:px-8 relative overflow-hidden mt-24">
+    <section id="philosophy" ref={ref} className="section-shell">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-950/8 to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="section-inner relative">
         <motion.div
-          className="flex flex-col items-center justify-center text-center mb-10"
+          className="section-header"
           variants={fadeUp} custom={0} initial="hidden" animate={inView ? "visible" : "hidden"}
         >
-          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-violet-400 mb-3">
+          <p className="section-subtitle">
             Philosophy
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-white max-w-2xl mx-auto mb-4">
+          <h2 className="section-title">
             How I Think About Software
           </h2>
-          <p className="text-white/45 text-sm max-w-2xl mx-auto">
+          <p className="section-copy">
             Principles that guide every line of code I write.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-10">
+        <div className="content-frame grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8">
           {philosophy.map(({ icon, title, description }, i) => (
             <motion.div
               key={title}
@@ -57,16 +57,16 @@ export default function PhilosophySection() {
         </div>
 
         <motion.blockquote
-          className="mt-24 max-w-3xl mx-auto text-center relative pt-10"
+          className="content-frame mt-24 max-w-3xl mx-auto text-center relative pt-10 flex flex-col items-center"
           variants={fadeUp} custom={9}
           initial="hidden" animate={inView ? "visible" : "hidden"}
         >
-          <div className="text-5xl font-serif text-violet-400/40 mb-2 leading-none">"</div>
-          <p className="text-white/65 text-lg sm:text-xl font-medium leading-relaxed italic">
+          <div className="text-5xl font-serif text-violet-400/40 mb-2 leading-none">&quot;</div>
+          <p className="text-white/65 text-lg sm:text-xl font-medium leading-relaxed italic text-center max-w-2xl mx-auto">
             Build software that future-you will thank you for. Write code as if the person
             who maintains it knows where you live.
           </p>
-          <div className="mt-4 text-xs text-white/30 font-semibold tracking-[0.15em] uppercase">
+          <div className="mt-4 text-xs text-white/30 font-semibold tracking-[0.15em] uppercase text-center">
             — Jonathan Harrison, Dev Manifesto
           </div>
         </motion.blockquote>

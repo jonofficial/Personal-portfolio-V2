@@ -25,20 +25,21 @@ export default function AboutSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" ref={ref} className="py-24 md:py-32 px-4 md:px-8 max-w-7xl mx-auto">
+    <section id="about" ref={ref} className="section-shell">
+      <div className="section-inner">
       <motion.div
-        className="flex flex-col items-center justify-center text-center mb-10"
+        className="section-header"
         variants={fadeUp} custom={0} initial="hidden" animate={inView ? "visible" : "hidden"}
       >
-        <p className="text-xs font-semibold tracking-[0.25em] uppercase text-violet-400 mb-3">
+        <p className="section-subtitle">
           About
         </p>
-        <h2 className="text-4xl md:text-6xl font-bold text-white max-w-2xl mx-auto">
+        <h2 className="section-title">
           The Developer Behind the Code
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-10 items-center mt-10">
+      <div className="content-frame grid md:grid-cols-2 gap-10 lg:gap-14 items-start mt-8">
         <motion.div
           className="flex flex-col items-center gap-8"
           variants={fadeUp} custom={2} initial="hidden" animate={inView ? "visible" : "hidden"}
@@ -76,7 +77,7 @@ export default function AboutSection() {
           </div>
         </motion.div>
 
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-6 md:pt-2">
           {[
             {
               icon: "👋",
@@ -111,6 +112,7 @@ export default function AboutSection() {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

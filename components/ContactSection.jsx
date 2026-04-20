@@ -61,27 +61,27 @@ export default function ContactSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" ref={ref} className="py-24 md:py-32 px-4 md:px-8 relative overflow-hidden mt-24">
+    <section id="contact" ref={ref} className="section-shell">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-violet-600/6 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative text-center">
+      <div className="section-inner relative text-center">
         <motion.div
-          className="flex flex-col items-center justify-center text-center mb-10"
+          className="section-header"
           variants={fadeUp} custom={0} initial="hidden" animate={inView ? "visible" : "hidden"}
         >
-          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-violet-400 mb-3">
+          <p className="section-subtitle">
             Contact
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-white max-w-2xl mx-auto mb-4">
-            Let's Build Something
+          <h2 className="section-title">
+            Let&apos;s Build Something
           </h2>
-          <p className="text-white/45 text-sm max-w-2xl mx-auto leading-relaxed">
+          <p className="section-copy max-w-2xl mx-auto">
             Whether you have a project in mind, want to collaborate, or just want to talk tech
             — my inbox is always open.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto mt-10">
+        <div className="content-frame grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto mt-8">
           {contactLinks.map(({ id, label, sublabel, href, icon, gradient, glow, primary }, i) => (
             <motion.a
               key={id}

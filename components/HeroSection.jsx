@@ -17,6 +17,8 @@ const WORDS = [
   "DevTools Creator",
 ];
 
+const HERO_PILLS = ["Tested Code", "Automation First", "Clean Architecture"];
+
 function TypewriterText() {
   const [wordIdx, setWordIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
@@ -82,12 +84,13 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-24 md:py-32"
+      className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center overflow-hidden px-4 py-20 md:px-8 md:py-24"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0d0a14] to-[#0a0a0a]" />
 
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-violet-600/8 blur-[120px] pointer-events-none" />
       <div className="absolute top-2/3 left-1/4 w-[300px] h-[300px] rounded-full bg-blue-600/6 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
 
       {/* 3D Canvas (desktop only) with reduced opacity */}
       {!isMobile && (
@@ -116,7 +119,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 text-center px-4 md:px-8 max-w-3xl mx-auto space-y-6"
+        className="relative z-10 text-center w-full max-w-4xl mx-auto space-y-6 px-1"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -185,6 +188,20 @@ export default function HeroSection() {
           >
             Contact
           </button>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-wrap justify-center gap-2 pt-1"
+          variants={itemVariants}
+        >
+          {HERO_PILLS.map((pill) => (
+            <span
+              key={pill}
+              className="px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide text-white/70 bg-white/5 border border-white/10"
+            >
+              {pill}
+            </span>
+          ))}
         </motion.div>
       </motion.div>
     </section>

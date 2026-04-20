@@ -29,24 +29,24 @@ export default function GithubSection() {
   };
 
   return (
-    <section id="github" ref={ref} className="py-24 md:py-32 px-4 md:px-8 relative overflow-hidden mt-24">
-      <div className="max-w-7xl mx-auto">
+    <section id="github" ref={ref} className="section-shell">
+      <div className="section-inner">
         <motion.div
-          className="flex flex-col items-center justify-center text-center mb-10"
+          className="section-header"
           variants={fadeUp} custom={0} initial="hidden" animate={inView ? "visible" : "hidden"}
         >
-          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-violet-400 mb-3">
+          <p className="section-subtitle">
             GitHub
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-white max-w-2xl mx-auto mb-4">
+          <h2 className="section-title">
             Open Source Activity
           </h2>
-          <p className="text-white/45 text-sm max-w-2xl mx-auto">
+          <p className="section-copy">
             A snapshot of my coding activity and public repositories.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-10 mt-10">
+        <div className="content-frame grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-10 mt-8">
           {[
             { label: "Public Repos",    value: profile.publicRepos },
             { label: "Featured Projects", value: featuredProjects.length },
@@ -66,7 +66,7 @@ export default function GithubSection() {
         </div>
 
         <motion.div
-          className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 mb-6 overflow-hidden w-full flex flex-col items-center"
+          className="content-frame bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-5 md:p-6 mb-6 overflow-hidden w-full flex flex-col items-center"
           variants={fadeUp} custom={7}
           initial="hidden" animate={inView ? "visible" : "hidden"}
         >
@@ -77,7 +77,7 @@ export default function GithubSection() {
             <span className="font-semibold text-white/80 text-sm">Contribution Graph</span>
           </div>
           
-          <div className="w-full overflow-x-auto pb-4 flex justify-center text-white/70">
+          <div className="w-full overflow-x-auto pb-2 md:pb-4 flex justify-center text-white/70">
             {inView && (
               <GitHubCalendar 
                 username="jonofficial" 
@@ -92,7 +92,7 @@ export default function GithubSection() {
         </motion.div>
 
         <motion.div
-          className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6"
+          className="content-frame bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6"
           variants={fadeUp} custom={8}
           initial="hidden" animate={inView ? "visible" : "hidden"}
         >
